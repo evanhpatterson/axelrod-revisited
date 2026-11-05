@@ -1,7 +1,7 @@
 import numpy as np
 from typing import List
 from strategies.strategy import Strategy
-from strategies.decision_payoffs import Decision, PrisonersDillemaPayoffs
+from strategies.decision_payoffs import Decision, PrisonersDilemmaPayoffs
 import pandas as pd
 
 
@@ -19,7 +19,7 @@ def run_game(player1, player2, n_rounds):
         p1_history.append(p1_decision)
         p2_history.append(p2_decision)
 
-        p1_payoff, p2_payoff = PrisonersDillemaPayoffs.get_payoffs(p1_decision, p2_decision)
+        p1_payoff, p2_payoff = PrisonersDilemmaPayoffs.get_payoffs(p1_decision, p2_decision)
 
         total_p1_payoff += p1_payoff
         total_p2_payoff += p2_payoff

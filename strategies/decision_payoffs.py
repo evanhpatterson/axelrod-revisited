@@ -7,14 +7,14 @@ class Decision(Enum):
     DEFECT = 1
 
 
-class PrisonersDillemaPayoffs:
+class PrisonersDilemmaPayoffs:
 
-    prisoners_dillema_p1_payoffs = np.array([
+    prisoners_dilemma_p1_payoffs = np.array([
         [3, 0],
         [5, 1]
     ])
 
-    prisoners_dillema_p2_payoffs = prisoners_dillema_p1_payoffs.T.copy()
+    prisoners_dilemma_p2_payoffs = prisoners_dilemma_p1_payoffs.T.copy()
 
     @staticmethod
     def from_decision(decision):
@@ -30,10 +30,10 @@ class PrisonersDillemaPayoffs:
     def get_payoffs(p1_decision, p2_decision):
 
         # retrieve the index for each decision
-        d1 = PrisonersDillemaPayoffs.from_decision(p1_decision)
-        d2 = PrisonersDillemaPayoffs.from_decision(p2_decision)
+        d1 = PrisonersDilemmaPayoffs.from_decision(p1_decision)
+        d2 = PrisonersDilemmaPayoffs.from_decision(p2_decision)
 
         # return the payoffs from the payoff matrix
         return (
-            PrisonersDillemaPayoffs.prisoners_dillema_p1_payoffs[d1, d2],
-            PrisonersDillemaPayoffs.prisoners_dillema_p2_payoffs[d1, d2])
+            PrisonersDilemmaPayoffs.prisoners_dilemma_p1_payoffs[d1, d2],
+            PrisonersDilemmaPayoffs.prisoners_dilemma_p2_payoffs[d1, d2])
